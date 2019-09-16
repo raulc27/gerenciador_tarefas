@@ -29,7 +29,7 @@ def cadastrar_tarefa(request):
     else:
         form_tarefa=TarefaForm()
 
-        return render(request,'tarefas/form_tarefa.html',{"form_tarefa":form_tarefa})
+    return render(request,'tarefas/form_tarefa.html',{"form_tarefa":form_tarefa})
 
 
 

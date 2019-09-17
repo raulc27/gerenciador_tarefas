@@ -1,8 +1,8 @@
 # Create your views here.
 from django.shortcuts import render, redirect
-from .forms import TarefaForm
-from .entidades.tarefa import Tarefa
-from .services import tarefa_service
+from ..forms import TarefaForm
+from ..entidades.tarefa import Tarefa
+from ..services import tarefa_service
 
 
 def listar_tarefas(request):
@@ -52,7 +52,7 @@ def editar_tarefa(request, id):
 
 
 def remover_tarefa(request, id):
-    tarefa_bd=tarefa_service.listar_tarefa_id()
+    tarefa_bd=tarefa_service.listar_tarefa_id(id)
     if request_method == "POST":
         tarefa_service.remover_tarefa(tarefa_bd)
         return redirect ('listar_tarefas')
